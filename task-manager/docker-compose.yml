@@ -1,0 +1,39 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: task-manager-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: task-manager-backend
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo:27017/taskmanager
+      JWT_SECRET: your_super_secret_jwt_key_here
+      JWT_EXPIRES_IN: 7d
+      JWT_REFRESH_SECRET: your_super_secret_refresh_key_here
+      JWT_REFRESH_EXPIRES_IN: 30d
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: task-manager-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
+

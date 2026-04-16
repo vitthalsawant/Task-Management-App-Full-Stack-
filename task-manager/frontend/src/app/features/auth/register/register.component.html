@@ -1,0 +1,38 @@
+<div class="auth-page">
+  <mat-card class="card">
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-subtitle>Create your account</mat-card-subtitle>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" autocomplete="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" autocomplete="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          autocomplete="new-password"
+        />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loading || form.invalid">
+        {{ loading ? 'Creating…' : 'Create account' }}
+      </button>
+
+      <p class="helper">
+        Already have an account?
+        <a routerLink="/login">Login</a>
+      </p>
+    </form>
+  </mat-card>
+</div>
+

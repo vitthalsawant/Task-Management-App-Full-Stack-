@@ -1,0 +1,22 @@
+.auth-page {
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: min(420px, 100%);
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.helper {
+  margin: 8px 0 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
