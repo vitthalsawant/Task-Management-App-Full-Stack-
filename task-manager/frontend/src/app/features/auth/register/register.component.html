@@ -1,20 +1,27 @@
 <div class="auth-page">
-  <mat-card class="card">
-    <mat-card-title>Register</mat-card-title>
-    <mat-card-subtitle>Create your account</mat-card-subtitle>
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="material-icons logo-icon">check_circle</span>
+      <span class="logo-text">TaskFlow</span>
+    </div>
+
+    <div class="auth-header">
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-sub">Start organizing your tasks in seconds.</p>
+    </div>
 
     <form [formGroup]="form" (ngSubmit)="submit()" class="form">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Full name</mat-label>
         <input matInput formControlName="name" type="text" autocomplete="name" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="field">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" type="email" autocomplete="email" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="field">
         <mat-label>Password</mat-label>
         <input
           matInput
@@ -24,15 +31,14 @@
         />
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="loading || form.invalid">
-        {{ loading ? 'Creating…' : 'Create account' }}
+      <button class="btn-submit" type="submit" [disabled]="loading || form.invalid">
+        {{ loading ? 'Creating account…' : 'Create account' }}
       </button>
 
       <p class="helper">
         Already have an account?
-        <a routerLink="/login">Login</a>
+        <a class="helper-link" routerLink="/login">Sign in</a>
       </p>
     </form>
-  </mat-card>
+  </div>
 </div>
-

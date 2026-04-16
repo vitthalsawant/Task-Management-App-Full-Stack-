@@ -1,15 +1,22 @@
 <div class="auth-page">
-  <mat-card class="card">
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-subtitle>Welcome back</mat-card-subtitle>
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="material-icons logo-icon">check_circle</span>
+      <span class="logo-text">TaskFlow</span>
+    </div>
+
+    <div class="auth-header">
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-sub">Sign in to your account to continue.</p>
+    </div>
 
     <form [formGroup]="form" (ngSubmit)="submit()" class="form">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="field">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" type="email" autocomplete="email" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="field">
         <mat-label>Password</mat-label>
         <input
           matInput
@@ -19,15 +26,14 @@
         />
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="loading || form.invalid">
-        {{ loading ? 'Signing in…' : 'Login' }}
+      <button class="btn-submit" type="submit" [disabled]="loading || form.invalid">
+        {{ loading ? 'Signing in…' : 'Sign in' }}
       </button>
 
       <p class="helper">
-        Don’t have an account?
-        <a routerLink="/register">Register</a>
+        Don't have an account?
+        <a class="helper-link" routerLink="/register">Create account</a>
       </p>
     </form>
-  </mat-card>
+  </div>
 </div>
-

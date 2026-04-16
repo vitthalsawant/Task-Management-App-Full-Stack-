@@ -1,34 +1,27 @@
-<mat-card class="card">
-  <mat-card-header>
-    <mat-card-title>{{ task.title }}</mat-card-title>
-    <mat-card-subtitle>
-      <mat-chip-set>
-        <mat-chip [color]="task.status | statusColor" [highlighted]="true">
-          {{ task.status }}
-        </mat-chip>
-        @if (task.dueDate) {
-          <mat-chip>
-            <mat-icon inline>event</mat-icon>
-            Due {{ task.dueDate | date: 'mediumDate' }}
-          </mat-chip>
-        }
-      </mat-chip-set>
-    </mat-card-subtitle>
-  </mat-card-header>
+<div class="task-card">
+  <div class="card-header">
+    <span class="badge {{ task.status | statusColor }}">{{ task.status }}</span>
 
-  <mat-card-content>
-    <p class="desc">{{ task.description || '—' }}</p>
-  </mat-card-content>
+    @if (task.dueDate) {
+      <span class="due-date">
+        <mat-icon class="due-icon">event</mat-icon>
+        {{ task.dueDate | date: 'MMM d, y' }}
+      </span>
+    }
+  </div>
 
-  <mat-card-actions align="end">
-    <button mat-button (click)="edit.emit(task)">
-      <mat-icon>edit</mat-icon>
+  <h3 class="card-title">{{ task.title }}</h3>
+
+  <p class="card-desc">{{ task.description || 'No description provided.' }}</p>
+
+  <div class="card-footer">
+    <button class="card-btn card-btn--edit" (click)="edit.emit(task)">
+      <mat-icon class="card-btn-icon">edit</mat-icon>
       Edit
     </button>
-    <button mat-button color="warn" (click)="remove.emit(task)">
-      <mat-icon>delete</mat-icon>
+    <button class="card-btn card-btn--delete" (click)="remove.emit(task)">
+      <mat-icon class="card-btn-icon">delete_outline</mat-icon>
       Delete
     </button>
-  </mat-card-actions>
-</mat-card>
-
+  </div>
+</div>

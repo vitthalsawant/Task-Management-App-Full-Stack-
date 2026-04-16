@@ -9,12 +9,11 @@ export class StatusColorPipe implements PipeTransform {
   transform(status: TaskStatus): string {
     switch (status) {
       case 'Done':
-        return 'primary';
+        return 'badge--done';
       case 'In Progress':
-        return 'accent';
+        return 'badge--progress';
       default:
-        return '';
+        return 'badge--todo';
     }
   }
 }
-

@@ -3,11 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { TaskService } from '../../../core/services/task.service';
@@ -23,10 +20,7 @@ import { LoadingSpinnerComponent } from '../../../shared/components/loading-spin
     CommonModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatButtonToggleModule,
     MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
     TaskCardComponent,
     LoadingSpinnerComponent,
   ],
@@ -43,6 +37,13 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   readonly loading = signal(false);
   readonly data = signal<PaginatedTasks | null>(null);
+
+  readonly filters: { label: string; value: TaskStatus | '' }[] = [
+    { label: 'All', value: '' },
+    { label: 'Todo', value: 'Todo' },
+    { label: 'In Progress', value: 'In Progress' },
+    { label: 'Done', value: 'Done' },
+  ];
 
   private readonly sub = new Subscription();
 
@@ -85,7 +86,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   openCreate() {
     const ref = this.dialog.open<TaskFormComponent, TaskFormData, CreateTaskDto>(TaskFormComponent, {
-      width: '640px',
+      width: '560px',
       data: { mode: 'create' },
     });
 
@@ -102,7 +103,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   openEdit(task: Task) {
     const ref = this.dialog.open<TaskFormComponent, TaskFormData, CreateTaskDto>(TaskFormComponent, {
-      width: '640px',
+      width: '560px',
       data: { mode: 'edit', task },
     });
 
@@ -126,4 +127,3 @@ export class TaskListComponent implements OnInit, OnDestroy {
     });
   }
 }
-

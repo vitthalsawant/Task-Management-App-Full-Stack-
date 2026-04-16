@@ -1,7 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { Task } from '../../../core/models/task.model';
 import { StatusColorPipe } from '../../../shared/pipes/status-color.pipe';
@@ -10,7 +7,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-task-card',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatChipsModule, MatIconModule, StatusColorPipe, DatePipe],
+  imports: [MatIconModule, StatusColorPipe, DatePipe],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.scss',
 })
@@ -19,4 +16,3 @@ export class TaskCardComponent {
   @Output() edit = new EventEmitter<Task>();
   @Output() remove = new EventEmitter<Task>();
 }
-
