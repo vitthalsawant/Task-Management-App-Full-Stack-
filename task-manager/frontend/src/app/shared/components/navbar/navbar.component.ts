@@ -227,7 +227,8 @@ export class NavbarComponent {
   private readonly auth = inject(AuthService);
   private readonly router = inject(Router);
 
-  readonly isAuthed = computed(() => this.auth.isAuthenticated());
+  // Use the auth user signal so navbar reacts immediately after login/logout.
+  readonly isAuthed = computed(() => !!this.auth.user());
   readonly userName = computed(() => this.auth.user()?.name ?? '');
   readonly initial = computed(() => (this.auth.user()?.name ?? 'U').charAt(0).toUpperCase());
 
