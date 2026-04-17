@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Task Manager-logo.svg" alt="Task Manager Logo" width="420" />
+  <img src="task-manager/taskflow-logo.svg" alt="Task Manager Logo" width="420" />
 </p>
 
 <h1 align="center">Task Manager API Documentation</h1>
