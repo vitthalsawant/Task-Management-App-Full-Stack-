@@ -14,7 +14,7 @@ import { AuthService } from '../../../core/services/auth.service';
           <span class="brand-icon">
             <mat-icon>check_circle</mat-icon>
           </span>
-          <span class="brand-name">TaskFlow</span>
+          <span class="brand-name">Task Manager</span>
         </a>
 
         <div class="nav-right">

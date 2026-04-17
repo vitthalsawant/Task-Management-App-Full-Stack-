@@ -1,0 +1,7 @@
+<svg width="720" height="160" viewBox="0 0 720 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="140" height="140" rx="28" fill="#2563EB"/>
+  <circle cx="80" cy="80" r="42" fill="white" fill-opacity="0.18"/>
+  <path d="M56 81L73 98L106 65" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="182" y="84" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Task Manager</text>
+  <text x="184" y="118" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="500">API Documentation</text>
+</svg>

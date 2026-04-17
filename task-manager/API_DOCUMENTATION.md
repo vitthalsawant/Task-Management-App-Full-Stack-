@@ -1,4 +1,8 @@
-# Task Manager API Documentation
+<p align="center">
+  <img src="./Task Manager-logo.svg" alt="Task Manager Logo" width="420" />
+</p>
+
+<h1 align="center">Task Manager API Documentation</h1>
 
 Comprehensive API reference for the Task Management App backend.
 
