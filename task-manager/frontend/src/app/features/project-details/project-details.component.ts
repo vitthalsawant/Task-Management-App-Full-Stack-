@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+type ApiEndpoint = {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  path: string;
+  auth: 'Public' | 'Bearer Token';
+  description: string;
+};
+
 @Component({
   selector: 'app-project-details',
   standalone: true,
@@ -35,5 +42,61 @@ export class ProjectDetailsComponent {
     'Status filtering, searching, and clean dashboard UI',
     'Consistent API response/error handling',
     'Containerized full stack run support',
+  ];
+
+  readonly apiBaseUrl = 'http://localhost:3000';
+
+  readonly apiResponseShape = '{ "success": true, "message": "OK", "data": {} }';
+
+  readonly apiEndpoints: ApiEndpoint[] = [
+    {
+      method: 'GET',
+      path: '/',
+      auth: 'Public',
+      description: 'Service root check endpoint',
+    },
+    {
+      method: 'POST',
+      path: '/auth/register',
+      auth: 'Public',
+      description: 'Register a new user account',
+    },
+    {
+      method: 'POST',
+      path: '/auth/login',
+      auth: 'Public',
+      description: 'Authenticate user and return access/refresh tokens',
+    },
+    {
+      method: 'GET',
+      path: '/tasks',
+      auth: 'Bearer Token',
+      description: 'Get current user tasks (supports filter/search/pagination)',
+    },
+    {
+      method: 'POST',
+      path: '/tasks',
+      auth: 'Bearer Token',
+      description: 'Create a new task for the authenticated user',
+    },
+    {
+      method: 'PUT',
+      path: '/tasks/:id',
+      auth: 'Bearer Token',
+      description: 'Update an existing task owned by the user',
+    },
+    {
+      method: 'DELETE',
+      path: '/tasks/:id',
+      auth: 'Bearer Token',
+      description: 'Delete an existing task owned by the user',
+    },
+  ];
+
+  readonly tasksQueryParams = [
+    '`status`: `Todo` | `In Progress` | `Done`',
+    '`search`: keyword search on title/description',
+    '`page`: page number (default starts from 1)',
+    '`limit`: items per page (max 100)',
   ];
 }

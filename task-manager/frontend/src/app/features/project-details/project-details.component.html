@@ -114,6 +114,48 @@ task-manager/
       </pre>
     </article>
 
+    <article class="card span-3 api-docs">
+      <h2>API Documentation</h2>
+      <p class="api-intro">
+        Base URL: <code>{{ apiBaseUrl }}</code>
+      </p>
+      <p class="api-intro">
+        Common response format: <code>{{ apiResponseShape }}</code>
+      </p>
+
+      <div class="endpoint-grid">
+        @for (endpoint of apiEndpoints; track endpoint.method + endpoint.path) {
+          <div class="endpoint-card">
+            <div class="endpoint-top">
+              <span class="method method-{{ endpoint.method.toLowerCase() }}">{{ endpoint.method }}</span>
+              <code class="endpoint-path">{{ endpoint.path }}</code>
+            </div>
+            <p class="endpoint-desc">{{ endpoint.description }}</p>
+            <p class="endpoint-auth">
+              Auth:
+              <span>{{ endpoint.auth }}</span>
+            </p>
+          </div>
+        }
+      </div>
+
+      <div class="api-meta-grid">
+        <div class="api-meta-card">
+          <h3>Auth Header (Protected APIs)</h3>
+          <pre class="api-code">Authorization: Bearer &lt;access_token&gt;</pre>
+        </div>
+
+        <div class="api-meta-card">
+          <h3>GET /tasks Query Parameters</h3>
+          <ul>
+            @for (param of tasksQueryParams; track param) {
+              <li [innerHTML]="param"></li>
+            }
+          </ul>
+        </div>
+      </div>
+    </article>
+
     <article class="card span-2">
       <h2>Additional Highlights</h2>
       <ul class="pill-list">
