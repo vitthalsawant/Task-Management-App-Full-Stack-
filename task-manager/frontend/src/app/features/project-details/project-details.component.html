@@ -1,21 +1,43 @@
 <section class="details-page">
-  <div class="hero">
-    <p class="eyebrow">Project Overview</p>
-    <h1>Task Management App - Full Stack Details</h1>
-    <p class="subtitle">
-      Complete project information in one place: architecture, tech stack, setup steps, workflow, and
-      file layout.
-    </p>
-  </div>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Project Overview</p>
+      <h1>Task Management App - Full Stack Details</h1>
+      <p class="subtitle">
+        One polished place to review architecture, setup, workflows, and key engineering decisions.
+      </p>
+      <div class="hero-tags">
+        <span>Angular + SCSS</span>
+        <span>NestJS + MongoDB</span>
+        <span>JWT Auth</span>
+        <span>Docker Ready</span>
+      </div>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="metric">
+        <strong>{{ techStack.length }}</strong>
+        <span>Stack Layers</span>
+      </div>
+      <div class="metric">
+        <strong>{{ localSteps.length + dockerSteps.length }}</strong>
+        <span>Total Setup Steps</span>
+      </div>
+      <div class="metric">
+        <strong>{{ keyFeatures.length }}</strong>
+        <span>Core Highlights</span>
+      </div>
+    </div>
+  </header>
 
   <div class="card-grid">
-    <article class="card info-card">
-      <h2>Project Info</h2>
+    <article class="card span-2">
+      <h2>Project Snapshot</h2>
       <p>
-        This platform helps users manage tasks with secure authentication, modern UI interactions, and
-        scalable backend APIs.
+        This platform helps users manage tasks with secure authentication, a modern dashboard experience,
+        and scalable backend APIs.
       </p>
-      <ul>
+      <ul class="check-list">
         <li>Single account handles personal task boards</li>
         <li>REST API powered by NestJS and MongoDB</li>
         <li>Responsive Angular frontend with smooth UX</li>
@@ -35,8 +57,8 @@
     </article>
 
     <article class="card">
-      <h2>How To Run (Local)</h2>
-      <ol>
+      <h2>Run Locally</h2>
+      <ol class="step-list">
         @for (step of localSteps; track step) {
           <li>{{ step }}</li>
         }
@@ -44,8 +66,8 @@
     </article>
 
     <article class="card">
-      <h2>How To Run (Docker)</h2>
-      <ol>
+      <h2>Run with Docker</h2>
+      <ol class="step-list">
         @for (step of dockerSteps; track step) {
           <li>{{ step }}</li>
         }
@@ -53,7 +75,7 @@
     </article>
 
     <article class="card">
-      <h2>Workflow Diagram</h2>
+      <h2>Workflow</h2>
       <pre class="diagram">
 User Login/Register
         |
@@ -71,8 +93,8 @@ MongoDB Stores User-Specific Tasks
       </pre>
     </article>
 
-    <article class="card files-card">
-      <h2>Project Files Setup</h2>
+    <article class="card span-2">
+      <h2>Project Structure</h2>
       <pre class="files-tree">
 task-manager/
 |-- frontend/
@@ -91,14 +113,14 @@ task-manager/
 |-- README.md
       </pre>
     </article>
-  </div>
 
-  <article class="card full-width">
-    <h2>Additional Highlights</h2>
-    <ul class="pill-list">
-      @for (feature of keyFeatures; track feature) {
-        <li>{{ feature }}</li>
-      }
-    </ul>
-  </article>
+    <article class="card span-2">
+      <h2>Additional Highlights</h2>
+      <ul class="pill-list">
+        @for (feature of keyFeatures; track feature) {
+          <li>{{ feature }}</li>
+        }
+      </ul>
+    </article>
+  </div>
 </section>
