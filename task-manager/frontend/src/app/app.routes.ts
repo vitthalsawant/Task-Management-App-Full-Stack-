@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { ProjectDetailsComponent } from './features/project-details/project-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/tasks', pathMatch: 'full' },
@@ -17,6 +18,11 @@ export const routes: Routes = [
     path: 'tasks',
     loadComponent: () =>
       import('./features/tasks/task-list/task-list.component').then((m) => m.TaskListComponent),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'project-details',
+    component: ProjectDetailsComponent,
     canActivate: [authGuard],
   },
   { path: '**', redirectTo: '/tasks' },

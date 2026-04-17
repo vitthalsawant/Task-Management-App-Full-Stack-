@@ -19,6 +19,10 @@ import { AuthService } from '../../../core/services/auth.service';
 
         <div class="nav-right">
           @if (isAuthed()) {
+            <a class="btn-details" routerLink="/project-details">
+              <mat-icon class="btn-icon">description</mat-icon>
+              <span>Project Details</span>
+            </a>
             <div class="user-pill">
               <div class="user-avatar">{{ initial() }}</div>
               <span class="user-name">{{ userName() }}</span>
@@ -156,6 +160,33 @@ import { AuthService } from '../../../core/services/auth.service';
         }
       }
 
+      .btn-details {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-primary);
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: var(--font-sans);
+        transition: all 0.15s ease;
+
+        .btn-icon {
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          background: var(--color-primary);
+          color: #fff;
+        }
+      }
+
       .btn-login {
         display: inline-flex;
         align-items: center;
@@ -184,6 +215,7 @@ import { AuthService } from '../../../core/services/auth.service';
           display: none;
         }
 
+        .btn-details span,
         .btn-logout span {
           display: none;
         }

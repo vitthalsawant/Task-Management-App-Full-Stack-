@@ -1,0 +1,104 @@
+<section class="details-page">
+  <div class="hero">
+    <p class="eyebrow">Project Overview</p>
+    <h1>Task Management App - Full Stack Details</h1>
+    <p class="subtitle">
+      Complete project information in one place: architecture, tech stack, setup steps, workflow, and
+      file layout.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <article class="card info-card">
+      <h2>Project Info</h2>
+      <p>
+        This platform helps users manage tasks with secure authentication, modern UI interactions, and
+        scalable backend APIs.
+      </p>
+      <ul>
+        <li>Single account handles personal task boards</li>
+        <li>REST API powered by NestJS and MongoDB</li>
+        <li>Responsive Angular frontend with smooth UX</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Tech Stack</h2>
+      <div class="stack-list">
+        @for (item of techStack; track item.layer) {
+          <div class="stack-row">
+            <span class="stack-label">{{ item.layer }}</span>
+            <span class="stack-value">{{ item.value }}</span>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>How To Run (Local)</h2>
+      <ol>
+        @for (step of localSteps; track step) {
+          <li>{{ step }}</li>
+        }
+      </ol>
+    </article>
+
+    <article class="card">
+      <h2>How To Run (Docker)</h2>
+      <ol>
+        @for (step of dockerSteps; track step) {
+          <li>{{ step }}</li>
+        }
+      </ol>
+    </article>
+
+    <article class="card">
+      <h2>Workflow Diagram</h2>
+      <pre class="diagram">
+User Login/Register
+        |
+        v
+JWT Issued (Access + Refresh)
+        |
+        v
+Frontend Calls Protected APIs
+        |
+        v
+Tasks Module (Create / Read / Update / Delete)
+        |
+        v
+MongoDB Stores User-Specific Tasks
+      </pre>
+    </article>
+
+    <article class="card files-card">
+      <h2>Project Files Setup</h2>
+      <pre class="files-tree">
+task-manager/
+|-- frontend/
+|   |-- src/
+|   |   |-- app/
+|   |   |   |-- core/
+|   |   |   |-- features/
+|   |   |   |-- shared/
+|-- backend/
+|   |-- src/
+|   |   |-- auth/
+|   |   |-- tasks/
+|   |   |-- users/
+|   |   |-- common/
+|-- docker-compose.yml
+|-- README.md
+      </pre>
+    </article>
+  </div>
+
+  <article class="card full-width">
+    <h2>Additional Highlights</h2>
+    <ul class="pill-list">
+      @for (feature of keyFeatures; track feature) {
+        <li>{{ feature }}</li>
+      }
+    </ul>
+  </article>
+</section>
