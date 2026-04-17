@@ -3,9 +3,13 @@
   flex-direction: column;
   min-height: 100dvh;
   background: var(--color-bg);
+  position: relative;
+  isolation: isolate;
 }
 
 .app-shell {
+  position: relative;
+  z-index: 1;
   flex: 1;
   padding: 28px 24px;
   max-width: 1280px;
@@ -14,5 +18,71 @@
 
   @media (max-width: 640px) {
     padding: 20px 16px;
+  }
+}
+
+app-navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(59, 130, 246, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 1));
+}
+
+.interactive-bg::before,
+.interactive-bg::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+}
+
+.interactive-bg::before {
+  background:
+    repeating-radial-gradient(circle at 28% 35%, rgba(148, 163, 184, 0.08) 0 1px, transparent 1px 22px),
+    repeating-radial-gradient(circle at 72% 60%, rgba(125, 211, 252, 0.08) 0 1px, transparent 1px 28px);
+  animation: waterSurfaceShift 16s linear infinite;
+  opacity: 0.42;
+}
+
+.interactive-bg::after {
+  background:
+    radial-gradient(38vw 32vw at 22% 26%, rgba(191, 219, 254, 0.23), rgba(191, 219, 254, 0)),
+    radial-gradient(34vw 30vw at 80% 72%, rgba(244, 114, 182, 0.15), rgba(244, 114, 182, 0)),
+    radial-gradient(30vw 26vw at 62% 18%, rgba(167, 243, 208, 0.13), rgba(167, 243, 208, 0));
+  filter: blur(20px);
+  opacity: 0.72;
+  animation: ambientBlushDrift 26s ease-in-out infinite alternate;
+}
+
+@keyframes waterSurfaceShift {
+  0% {
+    transform: translate3d(-1.8%, -1%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.6%, 1.8%, 0) scale(1.015);
+  }
+  100% {
+    transform: translate3d(-1.8%, -1%, 0) scale(1);
+  }
+}
+
+@keyframes ambientBlushDrift {
+  0% {
+    transform: translate3d(-1.5%, -0.8%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1%, 1.2%, 0) scale(1.025);
+  }
+  100% {
+    transform: translate3d(2%, -0.6%, 0) scale(1.01);
   }
 }

@@ -42,17 +42,20 @@ import { AuthService } from '../../../core/services/auth.service';
     `
       .navbar {
         position: sticky;
-        top: 0;
+        top: 12px;
         z-index: 100;
+        max-width: 1280px;
+        width: calc(100% - 48px);
+        margin: 14px auto 0;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
         background: var(--color-surface);
-        border-bottom: 1px solid var(--color-border);
-        box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
       }
 
       .navbar-inner {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 24px;
+        padding: 0 20px;
         height: 64px;
         display: flex;
         align-items: center;
@@ -207,8 +210,15 @@ import { AuthService } from '../../../core/services/auth.service';
       }
 
       @media (max-width: 480px) {
+        .navbar {
+          top: 10px;
+          width: calc(100% - 24px);
+          margin-top: 10px;
+          border-radius: var(--radius-md);
+        }
+
         .navbar-inner {
-          padding: 0 16px;
+          padding: 0 14px;
         }
 
         .user-name {
