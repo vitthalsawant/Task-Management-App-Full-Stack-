@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { AuthResponse, User } from '../models/user.model';
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://task-management-app-full-stack.onrender.com';
 const ACCESS_TOKEN_KEY = 'tm_access_token';
 const REFRESH_TOKEN_KEY = 'tm_refresh_token';
 const USER_KEY = 'tm_user';

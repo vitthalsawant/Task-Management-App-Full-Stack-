@@ -44,7 +44,7 @@ export class ProjectDetailsComponent {
     'Containerized full stack run support',
   ];
 
-  readonly apiBaseUrl = 'http://localhost:3000';
+  readonly apiBaseUrl = 'https://task-management-app-full-stack.onrender.com';
 
   readonly apiResponseShape = '{ "success": true, "message": "OK", "data": {} }';
 

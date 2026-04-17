@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { CreateTaskDto, PaginatedTasks, Task, TaskFilter } from '../models/task.model';
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://task-management-app-full-stack.onrender.com';
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
