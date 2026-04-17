@@ -99,6 +99,21 @@ Example:
 
 `/tasks?status=Todo&search=keyword&page=1&limit=10`
 
+## Demo video
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1VcRhDuEzi9XQwgh9ov5IExbgwRx1tq7P/view?usp=sharing" target="_blank">
+    <img
+      src="https://drive.google.com/thumbnail?id=1VcRhDuEzi9XQwgh9ov5IExbgwRx1tq7P&sz=w1200"
+      alt="Task Management App Demo Video"
+      width="900"
+      style="border-radius: 14px; border: 2px solid #d0d7de; box-shadow: 0 8px 24px rgba(140,149,159,0.2);"
+    />
+  </a>
+</p>
+
+Video link: [https://drive.google.com/file/d/1VcRhDuEzi9XQwgh9ov5IExbgwRx1tq7P/view?usp=sharing](https://drive.google.com/file/d/1VcRhDuEzi9XQwgh9ov5IExbgwRx1tq7P/view?usp=sharing)
+
 ## Screenshots
 
 - (placeholder) Login screen
