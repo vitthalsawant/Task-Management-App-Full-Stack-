@@ -2,6 +2,14 @@
 
 Production-ready task manager with JWT auth and per-user task CRUD.
 
+## Live project
+
+- App URL: [https://task-management-app-full-stack-1.onrender.com/](https://task-management-app-full-stack-1.onrender.com/)
+- You can create a new account and log in with your own credentials.
+- You can also use this dummy account:
+  - Email: `vitthalsawant300@gmail.com`
+  - Password: `11111111`
+
 ## Tech stack
 
 | Layer | Tech |

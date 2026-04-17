@@ -1,59 +1,50 @@
-# Frontend
+# Frontend (Angular App)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Frontend client for the Task Management App. Provides authentication screens and task management UI with filtering, search, and status updates.
 
-## Development server
+## Live project
 
-To start a local development server, run:
+- App URL: [https://task-management-app-full-stack-1.onrender.com/](https://task-management-app-full-stack-1.onrender.com/)
+- You can create a new account and login from the app.
+- Dummy account:
+  - Email: `vitthalsawant300@gmail.com`
+  - Password: `11111111`
 
-```bash
-ng serve
-```
+## Frontend topics
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular standalone architecture
+- Angular Material UI components
+- Authentication flow (register/login/logout)
+- JWT handling and route protection
+- Task list with filter/search/pagination
+- Reactive forms and validation
+- API integration with backend services
+- Responsive layout and UX
 
-## Code scaffolding
+## Tech stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 18+ (standalone + signals)
+- TypeScript
+- Angular Material
+- SCSS
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Setup (local)
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+App runs on `http://localhost:4200`.
 
-For end-to-end (e2e) testing, run:
+## Build
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Test
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
